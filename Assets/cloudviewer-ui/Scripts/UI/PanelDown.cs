@@ -23,8 +23,8 @@ namespace Assets.Scripts.UI
             inputField_get.onValueChanged.AddListener((string value) =>
             {
                 CVManager.Instance.webRequesetServer.getAddress = value;
-            }); 
-            inputField_get.onValueChanged.AddListener((string value) =>
+            });
+            inputField_post.onValueChanged.AddListener((string value) =>
             {
                 CVManager.Instance.webRequesetServer.postAddress = value;
             });
@@ -34,7 +34,7 @@ namespace Assets.Scripts.UI
             });
             button_set.onClick.AddListener(() =>
             {
-                StartCoroutine(CVManager.Instance.webRequesetServer.PostWebRequest("\"light_id\":\"light_3\",\"color\":3,\"remain\":30"));
+                StartCoroutine(CVManager.Instance.webRequesetServer.PostWebRequest("{\"light_id\":\"light_3\",\"color\":3,\"remain\":30}"));
             });
         }
 
