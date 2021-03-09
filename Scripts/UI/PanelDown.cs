@@ -12,7 +12,8 @@ namespace Assets.Scripts.UI
         public InputField inputField_get;
         public InputField inputField_post;
         public Button button_get;
-        public Button button_set;
+        public Button button_post;
+        public Button button_postForm;
         public Text text_Result;
         // Start is called before the first frame update
         void Start()
@@ -32,9 +33,13 @@ namespace Assets.Scripts.UI
             {
                 StartCoroutine(CVManager.Instance.webRequesetServer.GetWebRequest());
             });
-            button_set.onClick.AddListener(() =>
+            button_post.onClick.AddListener(() =>
             {
                 StartCoroutine(CVManager.Instance.webRequesetServer.PostWebRequest("{\"light_id\":\"light_3\",\"color\":3,\"remain\":30}"));
+            });
+            button_postForm.onClick.AddListener(() =>
+            {
+                StartCoroutine(CVManager.Instance.webRequesetServer.PostWebRequest_Form(new TrafficLightData("traffic",1,30)));
             });
         }
 
