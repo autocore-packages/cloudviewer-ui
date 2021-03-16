@@ -29,8 +29,9 @@ namespace Assets.Scripts.UI
             {
                 CVManager.Instance.webRequesetServer.postAddress = value;
             });
-            button_get.onClick.AddListener(()=> 
+            button_get?.onClick.AddListener(() =>
             {
+                Debug.Log("click get");
                 StartCoroutine(CVManager.Instance.webRequesetServer.GetWebRequest());
             });
             button_post.onClick.AddListener(() =>
@@ -55,6 +56,7 @@ namespace Assets.Scripts.UI
         }
         private void SetResultText(string content)
         {
+            Debug.Log(content);
             text_Result.text = content;
         }
     }
