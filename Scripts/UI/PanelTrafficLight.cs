@@ -28,12 +28,17 @@ namespace Assets.Scripts.UI
         }
         private void PostTraffic()
         {
+            if (trafficLight == null)
+            {
+                PanelNotice.Instance.SetNotice("Traffic is not set", 2);
+                return;
+            }
             TrafficLightData data = trafficLight.LightData;
             data.remain = int.Parse(inputField_Scends.text);
             if (toggle_R.isOn) data.color = 1;
             else if (toggle_g.isOn) data.color = 2;
             else if (toggle_Y.isOn) data.color = 3;
-            StartCoroutine(CVManager.Instance.webRequesetServer.PostWebRequest(data));
+            StartCoroutine(CVManager.Instance.webRequesetServer.PostWebRequest_Form(data));
         }
         void ChangeTL(TrafficLight trafficLight)
         {

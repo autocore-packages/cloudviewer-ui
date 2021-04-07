@@ -23,7 +23,7 @@ namespace Assets.Scripts.UI
             CVManager.Instance.webRequesetServer.OnGetRequest += SetResultText;
             inputField_get.onValueChanged.AddListener((string value) =>
             {
-                CVManager.Instance.webRequesetServer.getAddress = value;
+                CVManager.Instance.webRequesetServer.getAddress = value; 
             });
             inputField_post.onValueChanged.AddListener((string value) =>
             {

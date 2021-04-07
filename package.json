@@ -2,7 +2,7 @@
   "name": "com.autocore.cloudviewer-ui",
   "displayName": "cloudviewer-ui",
   "description": "ui of cloudviewer",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "license": "MIT",
   "dependencies": {
     "com.autocore.cloudviewer-controller": "https://github.com/autocore-packages/cloudviewer-controller.git#0.0.12"
