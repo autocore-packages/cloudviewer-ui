@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 using System;
+using UnityEngine.UI;
 
 namespace Assets.Scripts.UI
 {
@@ -24,7 +21,6 @@ namespace Assets.Scripts.UI
         public Toggle toggle_g;
         public Text text_setscends;
         public InputField inputField_Scends;
-        public TrafficLight trafficLight;
 
         public Image image_color;
         public Text text_second;

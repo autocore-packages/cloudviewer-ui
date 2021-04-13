@@ -11,19 +11,18 @@ namespace Assets.Scripts.UI
     {
         public InputField inputField_get;
         public InputField inputField_post;
+        public Action<string> OnSetGetAddress;
+        public Action<string> OnSetPostAddress;
         // Start is called before the first frame update
         void Start()
         {
-            CVManager.Instance.addressNode.OnAddressConfigChange += SetPanelDown;
-            CVManager.Instance.webRequesetServer.OnPostRequest += SetResultText;
-            CVManager.Instance.webRequesetServer.OnGetRequest += SetResultText;
             inputField_get.onValueChanged.AddListener((string value) =>
             {
-                CVManager.Instance.webRequesetServer.getAddress = value; 
+                OnSetGetAddress.Invoke(value);
             });
             inputField_post.onValueChanged.AddListener((string value) =>
             {
-                CVManager.Instance.webRequesetServer.postAddress = value;
+                OnSetPostAddress.Invoke(value);
             });
         }
 
@@ -32,10 +31,10 @@ namespace Assets.Scripts.UI
         {
 
         }
-        private void SetPanelDown(AddressConfig config)
+        private void SetPanelDown(string getTrafficAddress,string postTrafficAddress)
         {
-            inputField_get.text = config.getTrafficAddress.ToString();
-            inputField_post.text = config.postTrafficAddress.ToString();
+            inputField_get.text = getTrafficAddress.ToString();
+            inputField_post.text = postTrafficAddress.ToString();
         }
         private void SetResultText(string content)
         {
