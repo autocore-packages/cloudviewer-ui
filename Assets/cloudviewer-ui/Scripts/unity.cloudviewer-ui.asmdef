@@ -1,8 +1,6 @@
 {
     "name": "unity.cloudviewer-ui",
-    "references": [
-        "GUID:a3351747849c61a469d179f5e1121edf"
-    ],
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
