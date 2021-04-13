@@ -31,7 +31,7 @@ namespace Assets.Scripts.UI
         {
 
         }
-        private void SetPanelDown(string getTrafficAddress,string postTrafficAddress)
+        public void SetAddressPanel(string getTrafficAddress,string postTrafficAddress)
         {
             inputField_get.text = getTrafficAddress.ToString();
             inputField_post.text = postTrafficAddress.ToString();

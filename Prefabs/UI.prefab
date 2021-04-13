@@ -2385,7 +2385,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3723cd69117a8f846a5d139cfe36a7b6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 11d1c1db553017f48b5e1e457fe4462f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3345,7 +3345,6 @@ MonoBehaviour:
   toggle_g: {fileID: 8568577372771326435}
   text_setscends: {fileID: 8568577372567034594}
   inputField_Scends: {fileID: 8568577371171891786}
-  trafficLight: {fileID: 0}
   image_color: {fileID: 8568577371598758846}
   text_second: {fileID: 8568577372182852871}
 --- !u!1 &8568577371554537266
