@@ -2,13 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-using Assets.Scripts;
+using System;
 
 namespace Assets.Scripts.UI
 {
+    public struct PanelTrafficLightData
+    {
+        public string name;
+        public int color;
+        public int time;
+    }
+
     public class PanelTrafficLight : PanelBase<PanelTrafficLight>, ISimuPanel
     {
+        private PanelTrafficLightData panelData;
+
         public Text text_name;
         public Button button_set;
         public Toggle toggle_R;
@@ -21,51 +29,43 @@ namespace Assets.Scripts.UI
         public Image image_color;
         public Text text_second;
 
+        public Action<PanelTrafficLightData> OnSetTraffic;
+
         private void Start()
         {
             button_set.onClick.AddListener(PostTraffic);
-            CVManager.Instance.OnChangeTL += ChangeTL;
         }
         private void PostTraffic()
         {
-            if (trafficLight == null)
-            {
-                PanelNotice.Instance.SetNotice("Traffic is not set", 2);
-                return;
-            }
-            TrafficLightData data = trafficLight.LightData;
-            data.remain = int.Parse(inputField_Scends.text);
-            if (toggle_R.isOn) data.color = 1;
-            else if (toggle_g.isOn) data.color = 2;
-            else if (toggle_Y.isOn) data.color = 3;
-            StartCoroutine(CVManager.Instance.webRequesetServer.PostWebRequest_Form(data));
+            panelData.name = text_name.text;
+            panelData.time = int.Parse(inputField_Scends.text);
+            if (toggle_R.isOn) panelData.color = 1;
+            else if (toggle_g.isOn) panelData.color = 2;
+            else if (toggle_Y.isOn) panelData.color = 3;
+            OnSetTraffic.Invoke(panelData);
         }
-        void ChangeTL(TrafficLight trafficLight)
+        void InitPanel(PanelTrafficLightData data)
         {
             SetPanelActive(true);
-            this.trafficLight = trafficLight;
-        }
-        void Update()
-        {
-            if (trafficLight == null) return;
-            if (trafficLight.LightData == null) return;
-            switch (trafficLight.LightData.color)
+            panelData = data;
+            text_name.text = panelData.name;
+            inputField_Scends.text = panelData.time.ToString();
+            switch (panelData.color)
             {
+                case 0:
+                    break;
                 case 1:
-                    image_color.color = Color.red;
+                    toggle_R.isOn = true;
                     break;
                 case 2:
-                    image_color.color = Color.green;
+                    toggle_g.isOn = true;
                     break;
                 case 3:
-                    image_color.color = Color.yellow;
+                    toggle_Y.isOn = true;
                     break;
                 default:
                     break;
             }
-            text_second.text = trafficLight.LightData.remain.ToString();
-
-
         }
 
     }
