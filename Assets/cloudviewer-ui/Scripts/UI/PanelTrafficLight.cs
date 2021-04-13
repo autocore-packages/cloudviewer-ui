@@ -44,7 +44,7 @@ namespace Assets.Scripts.UI
             else if (toggle_Y.isOn) panelData.color = 3;
             OnSetTraffic.Invoke(panelData);
         }
-        void InitPanel(PanelTrafficLightData data)
+        public void InitPanel(PanelTrafficLightData data)
         {
             SetPanelActive(true);
             panelData = data;

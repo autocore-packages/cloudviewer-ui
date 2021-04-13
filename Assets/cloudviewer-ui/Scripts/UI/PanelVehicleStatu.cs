@@ -32,9 +32,5 @@ namespace Assets.Scripts.UI
             text_throttle.text = throttle.ToString();
             text_brake.text = brake.ToString();
         }
-        void ChangeTL()
-        {
-            SetPanelActive(true);
-        }
     }
 }
