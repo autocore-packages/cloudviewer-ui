@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &32793774 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8568577371554537268, guid: 2d4c5df1a9e7de844a0ffb09171178c9, type: 3}
+  m_PrefabInstance: {fileID: 8568577371423345984}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c1f133f6f4bf784e9a613bcb464bff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &337521504
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,6 +517,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 245873043, guid: 2d4c5df1a9e7de844a0ffb09171178c9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 32793774}
+    - target: {fileID: 245873043, guid: 2d4c5df1a9e7de844a0ffb09171178c9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchPanelActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 245873043, guid: 2d4c5df1a9e7de844a0ffb09171178c9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Assets.Scripts.UI.PanelBase`1[[Assets.Scripts.UI.PanelAddressSetting,
+        unity.cloudviewer-ui
+      objectReference: {fileID: 0}
     - target: {fileID: 8568577371152762906, guid: 2d4c5df1a9e7de844a0ffb09171178c9, type: 3}
       propertyPath: m_Name
       value: UI
@@ -592,6 +616,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8568577371152762910, guid: 2d4c5df1a9e7de844a0ffb09171178c9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568577371554537268, guid: 2d4c5df1a9e7de844a0ffb09171178c9, type: 3}
+      propertyPath: isActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8568577371917307673, guid: 2d4c5df1a9e7de844a0ffb09171178c9, type: 3}
