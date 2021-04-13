@@ -2,7 +2,7 @@
   "name": "com.autocore.cloudviewer-ui",
   "displayName": "cloudviewer-ui",
   "description": "ui of cloudviewer",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "license": "MIT",
   "dependencies": {
   }
